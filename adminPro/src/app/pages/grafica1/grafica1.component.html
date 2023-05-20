@@ -2,13 +2,22 @@
 <div class="row">
   <div class="col-6">
     
-    <app-dona titulo="Sales"></app-dona>
+    <app-dona 
+      titulo="Sales"
+      [labels]="['Pan', 'Refresco', 'Tacos']"
+      [data]="[ 10, 20, 30 ]"
+      [backgroundColor]="['#f44336', '#ffd966', '#16537e']">
+    </app-dona>
 
   </div>
 
   <div class="col-6">
     
-    <app-dona titulo="Sales"></app-dona>
+    <app-dona 
+      titulo="Change"
+      [labels]="['Pollo', 'Carne', 'Pescado']"
+      [data]="[ 50, 20, 30 ]">
+    </app-dona>
 
   </div>
 </div>
@@ -16,13 +25,18 @@
 <div class="row">
     <div class="col-6">
       
-      <app-dona titulo="Sales"></app-dona>
+      <app-dona 
+        titulo="Buy"
+        [labels]="['Ensalada', 'Frijoles', 'Frutas']"
+        [data]="[ 40, 15, 45 ]"
+        [backgroundColor]="['#fc8621', '#da1212', '#2f9919']">
+      </app-dona>
   
     </div>
   
     <div class="col-6">
       
-      <app-dona ></app-dona>
+      <app-dona titulo="Default"></app-dona>
   
     </div>
   </div>

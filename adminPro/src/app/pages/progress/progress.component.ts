@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-progress',
@@ -18,5 +18,5 @@ export class ProgressComponent {
     return `${this.progreso2}%`;
   }
 
- 
+
 }

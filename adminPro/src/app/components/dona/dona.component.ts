@@ -11,13 +11,28 @@ export class DonaComponent {
   
 
   @Input() titulo: string = 'Sin titulo';
+  @Input('labels') doughnutChartLabels: string[] = [];
+  @Input('data') dataDonut: number[] = [];
+  @Input('backgroundColor') backgroundColorDonut: string[] = [];
+  
+  constructor() {
+    // Valores por defecto en caso no se setee nada desde otros componentes
+    this.dataDonut = [350, 450, 100];
+    this.doughnutChartLabels = ['Labels1', 'Labels2', 'Labels3'];
+    this.backgroundColorDonut = ['#6857E6', '#009FEE', '#F02059'];
+  }
 
-  public doughnutChartLabels: string[] = [ 'Download Sales', 'In-Store Sales', 'Mail-Order Sales' ];
+  ngOnInit(): void {
+    // Aca seteamos los valores que vienen como @Input() al objeto doughnutChartData
+    this.doughnutChartData.datasets[0].data = this.dataDonut;
+    this.doughnutChartData.datasets[0].backgroundColor = this.backgroundColorDonut;
+    this.doughnutChartData.labels = this.doughnutChartLabels;
+  }
 
   public doughnutChartData: ChartData<'doughnut'> = {
     labels: this.doughnutChartLabels,
     datasets: [
-      { data: [ 350, 450, 100 ] },
+      { data: this.dataDonut },
     ]
   };
 
